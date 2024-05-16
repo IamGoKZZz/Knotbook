@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q&A Forum</title>
+    <style>
+        /* Basic styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #CDF5FD;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #89CFF3;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .question {
+            margin-bottom: 20px; /* Add bottom margin to create a gap between questions */
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 10px; /* Adjust padding as needed */
+        }
+        #questionForm {
+            margin-bottom: 20px;
+        }
+        .title{
+
+            text-align: center;
+            font-size: 30px;
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            color: #FA7070;
+          }
+        .navbar {
+            overflow:hidden;
+            background-color: #00A9FF;
+            position:absolute;
+            top: 40px;
+            width: 100%;
+            left: 0;
+            font-family: monospace;
+            font-size: 14px;
+            display: flex;
+            border-radius: 10px;
+            
+          }
+          .navbar a {
+            float: left;
+            display: block;
+            color: white;
+            text-align:center;
+            padding: 14px 85px;
+            text-decoration: none;
+            padding-right: 50px;
+            margin-right: 1231px;
+            padding-left: 50px;
+          }
+          .navbar-right {
+            display: flex;
+            align-items: center; /* Vertically center items */
+          }
+          h1{
+            color: #FA7070;
+          }
+    </style>
+</head>
+<body>
+    <div class="title">KNOTBOOK</div>
+    <div class="navbar">
+        
+        <div class="navbar-right">
+            <a href="/index1.1.html">HOME</a>
+           
+        </div>
+    </div>
+    <div class="container">
+        <h1>FAQ Page</h1>
+       
+        <form id="questionForm">
+            <label for="question">Ask a Question:</label>
+            <input type="text" id="question" name="question" required>
+            <button type="submit">Submit</button>
+        </form>
+        <div id="questions"></div>
+    </div>
+
+    <script src="js/comment.js"></script>
+</body>
+</html>

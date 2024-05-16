@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Table</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 20px;
+            border: 1px solid black;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+        .role-text {
+    margin-right: 10px; /* Adjust the margin as needed */
+}
+/* CSS for role change button */
+.role-change-button {
+    width: 20px; /* Set the width of the button */
+    height: 20px; /* Set the height of the button */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    transition: background-color 0.3s ease; /* Smooth transition for background-color change */
+    position: relative; /* Ensure relative positioning for absolute positioning of the text */
+}
+
+/* Hover effect */
+.role-change-button:hover {
+    background-color: lightgray; /* Change background color on hover */
+}
+
+/* Focus effect */
+.role-change-button:focus {
+    outline: none; /* Remove default focus outline */
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.5); /* Add custom focus style */
+}
+
+/* Text for changing role */
+.role-change-button::after {
+    content: 'Change Role'; /* Display text */
+    position: absolute; /* Position the text */
+    top: 100%; /* Align the text below the button */
+    left: 50%; /* Align the text horizontally centered */
+    transform: translateX(-50%); /* Center the text horizontally */
+    opacity: 0; /* Initially hide the text */
+    /*pointer-events: none; Ignore pointer events on the text*/
+    transition: opacity 0.3s ease; /* Smooth transition for opacity change */
+}
+
+/* Show text on hover */
+.role-change-button:hover::after {
+    opacity: 1; /* Show the text on hover */
+}
+
+
+
+    </style>
+</head>
+<body>
+     <!-- Content will be dynamically generated here -->
+     <div id="popup-container"></div>
+
+     <!-- <script>
+         // Call getUsersList function when the page is loaded
+         getUsersList();
+     </script> -->
+     <script src="js/userstable.js"></script>
+</body>
+</html>

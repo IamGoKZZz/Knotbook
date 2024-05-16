@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="js/index.js"></script>
+<title>Homepage</title>
+<link rel="stylesheet" type="text/css" href="css/index.css">
+</head>
+<body>
+<div class="title">KNOTEBOOK</div>
+<div class="navbar">
+ 
+  <a href="#"> HOME</a>
+  <a href="#">Notification</a>
+  <div class="dropp">
+
+    <button class="button1">
+      Notes
+      <img src="chevron.svg" />
+    </button>
+    <div class="dropdown-menu">
+      <button>2015</button>
+      <button>2019</button>
+      <button>2024</button>
+
+    </div>
+  </div>
+  <a href="cmnt.html">Chatbox</a>
+  <a href="#">about us</a>
+  <a href="#" onclick="openPopup()">Profile</a>
+</div>
+<div class="drop">
+<div class="dropdown">
+  <button class="dropbtn">CSE<img src="chevron.svg" /></button>
+  <div class="dropdown-content" id="dropdown-content">
+    <button onclick="showSemester('s8','CSE')">Semester 8</button>
+    <button onclick="showSemester('s7','CSE')">Semester 7</button>
+    <button onclick="showSemester('s6','CSE')">Semester 6</button>
+    <button onclick="showSemester('s5','CSE')">Semester 5</button>
+    <button onclick="showSemester('s4','CSE')">Semester 4</button>
+    <button onclick="showSemester('s3','CSE')">Semester 3</button>
+    <button onclick="showSemester('s2','CSE')">Semester 2</button>
+    <button onclick="showSemester('s1','CSE')">Semester 1</button>
+  </div>
+  </div>
+  <div class="dropdown">
+  <button class="dropbtn">ME<img src="chevron.svg" /></button>
+  <div class="dropdown-content" id="dropdown-content">
+    <button onclick="showDepartment('CSE')">Semester 8</button>
+    <button onclick="showDepartment('Mech')">Semester 7</button>
+    <button onclick="showDepartment('Civil')">Semester 6</button>
+    <button onclick="showDepartment('ECE')">Semester 5</button>
+    <button onclick="showDepartment('EEE')">Semester 4</button>
+    <button onclick="showDepartment('EEE')">Semester 3</button>
+    <button onclick="showDepartment('EEE')">Semester 2</button>
+    <button onclick="showDepartment('EEE')">Semester 1</button>
+  </div>
+ </div> 
+ <div class="dropdown">
+  <button class="dropbtn">CE<img src="chevron.svg" /></button>
+  <div class="dropdown-content" id="dropdown-content">
+    <button onclick="showDepartment('CSE')">Semester 8</button>
+    <button onclick="showDepartment('Mech')">Semester 7</button>
+    <button onclick="showDepartment('Civil')">Semester 6</button>
+    <button onclick="showDepartment('ECE')">Semester 5</button>
+    <button onclick="showDepartment('EEE')">Semester 4</button>
+    <button onclick="showDepartment('EEE')">Semester 3</button>
+    <button onclick="showDepartment('EEE')">Semester 2</button>
+    <button onclick="showDepartment('EEE')">Semester 1</button>
+  </div>
+</div> 
+<div class="dropdown">
+  <button class="dropbtn">EEE<img src="chevron.svg" /></button>
+  <div class="dropdown-content" id="dropdown-content">
+    <button onclick="showDepartment('CSE')">Semester 8</button>
+    <button onclick="showDepartment('Mech')">Semester 7</button>
+    <button onclick="showDepartment('Civil')">Semester 6</button>
+    <button onclick="showDepartment('ECE')">Semester 5</button>
+    <button onclick="showDepartment('EEE')">Semester 4</button>
+    <button onclick="showDepartment('EEE')">Semester 3</button>
+    <button onclick="showDepartment('EEE')">Semester 2</button>
+    <button onclick="showDepartment('EEE')">Semester 1</button>
+  </div>
+</div> 
+<div class="dropdown">
+  <button class="dropbtn">ECE<img src="chevron.svg" /></button>
+  <div class="dropdown-content" id="dropdown-content">
+    <button onclick="showDepartment('CSE')">Semester 8</button>
+    <button onclick="showDepartment('Mech')">Semester 7</button>
+    <button onclick="showDepartment('Civil')">Semester 6</button>
+    <button onclick="showDepartment('ECE')">Semester 5</button>
+    <button onclick="showDepartment('EEE')">Semester 4</button>
+    <button onclick="showDepartment('EEE')">Semester 3</button>
+    <button onclick="showDepartment('EEE')">Semester 2</button>
+    <button onclick="showDepartment('EEE')">Semester 1</button>
+  </div>
+</div> 
+</div>
+
+ <!-- <div class="dropdown">
+    <button class="dropbtn">Departments</button>
+    <div class="dropdown-content" id="dropdown-content">
+      <button onclick="showDepartment('CSE')">CSE</button>
+      <button onclick="showDepartment('Mech')">Mech</button>
+      <button onclick="showDepartment('Civil')">Civil</button>
+      <button onclick="showDepartment('ECE')">ECE</button>
+      <button onclick="showDepartment('EEE')">EEE</button>
+    </div>
+</div>-->
+
+<div class="content" id="department-content">
+  <!-- Content area where department dropdowns will appear -->
+</div>
+
+<div class="popup" id="popup">
+  <div class="popup-content">
+    <span class="close" onclick="closePopup()">&times;</span>
+    <h2>Profile</h2>
+    <div id="profile-details">
+      <p><strong>Username:</strong> <span id="username"></span></p>
+      <p><strong>Role:</strong> <span id="role"></span></p>
+      <p><strong>Department:</strong> <span id="role"></span></p>
+
+    </div>
+    <button onclick="logout()">Logout</button>
+  </div>
+</div>
+
+
+</body>
+</html>

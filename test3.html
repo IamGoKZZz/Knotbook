@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Add Buttons Dynamically</title>
+<style>
+    /* Style for buttons */
+    .added-button {
+        margin: 5px;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+    }
+
+    /* Style for container */
+    #buttonContainer {
+        display: flex;
+        flex-direction: row; /* Display buttons horizontally */
+        flex-wrap: wrap; /* Allow buttons to wrap to next line if needed */
+    }
+
+    /* Hide the input initially */
+    #buttonName {
+        display: none;
+    }
+</style>
+</head>
+<body>
+    <h2>Add Buttons Dynamically</h2>
+    <div id="buttonContainer"></div>
+    <!-- Input field for button name -->
+    <input type="text" id="buttonName" placeholder="Enter button name">
+    <button id="addButton" class="added-button">Add Button</button>
+
+    <script>
+        document.getElementById("addButton").addEventListener("click", function() {
+            // Show the input field when "Add Button" is clicked
+            document.getElementById("buttonName").style.display = "inline-block";
+            
+            // Change "Add Button" text to "Create Button"
+            document.getElementById("addButton").innerHTML = "Create Button";
+
+            // Focus on the input field
+            document.getElementById("buttonName").focus();
+        });
+
+        document.getElementById("buttonName").addEventListener("keypress", function(e) {
+            // If "Enter" key is pressed, create the button
+            if (e.key === "Enter") {
+                createButton();
+            }
+        });
+
+        function createButton() {
+            var buttonName = document.getElementById("buttonName").value.trim();
+            if (buttonName === "") {
+                alert("Please enter a button name.");
+                return;
+            }
+
+            var button = document.createElement("button");
+            button.innerHTML = buttonName;
+            button.classList.add("added-button");
+            button.onclick = function() {
+                alert("You clicked on button: " + buttonName);
+            };
+
+            // Insert new button before "Add Button"
+            var addButton = document.getElementById("addButton");
+            addButton.parentNode.insertBefore(button, addButton);
+
+            // Reset the input field
+            document.getElementById("buttonName").value = "";
+            // Hide the input field after creating the button
+            document.getElementById("buttonName").style.display = "none";
+            // Change "Create Button" text back to "Add Button"
+            document.getElementById("addButton").innerHTML = "Add Button";
+        }
+    </script>
+</body>
+</html>

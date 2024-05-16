@@ -1,0 +1,89 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/mod1.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+   
+</head>
+
+<body>
+    <div class="dropdown-container">
+        <div class="dropdown">
+            <button class="dropbtn" onclick="locSave('modNum',1)">mod1</button>
+            <div class="dropdown-content">
+                <a href="#">HTML</a>
+                <a href="#">CSS</a>
+                <a href="#">JS</a>
+                <form id="pdfForm" enctype="multipart/form-data">
+
+                    <input type="text" id="pdfname" class="pdfname" required>
+                    <input type="file" id="pdfInput" accept=".pdf" required>
+                    <button type="submit" onclick="saveFileName()">Upload</button>
+                </form>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn" onclick="locsave('modNum',2)">mod2</button>
+            <div class="dropdown-content">
+                <a href="#">HTML</a>
+                <a href="#">CSS</a>
+                <a href="#">JS</a>
+                <form id="pdfForm" enctype="multipart/form-data">
+
+                    <input type="text" id="pdfname" class="pdfname" required>
+                    <input type="file" id="pdfInput" accept=".pdf" required>
+                    <button type="submit" onclick="saveFileName()">Upload</button>
+                </form>
+            </div>
+        </div>
+        <div class="dropdown">
+                <button class="dropbtn">mod3</button>
+                <div class="dropdown-content">
+                    <a href="#">HTML</a>
+                    <a href="#">CSS</a>
+                    <a href="#">JS</a>
+                    <form id="pdfForm" enctype="multipart/form-data">
+
+                        <input type="text" id="pdfname" class="pdfname" required>
+                        <input type="file" id="pdfInput" accept=".pdf" required>
+                        <button type="submit">Upload</button>
+                    </form>
+            </div>
+        </div>
+        <div class="dropdown">
+                <button class="dropbtn">mod4</button>
+                <div class="dropdown-content">
+                    <a href="#">HTML</a>
+                    <a href="#">CSS</a>
+                    <a href="#">JS</a>
+                    <form id="pdfForm" enctype="multipart/form-data">
+
+                        <input type="text" id="pdfname" class="pdfname" required>
+                        <input type="file" id="pdfInput" accept=".pdf" required>
+                        <button type="submit">Upload</button>
+                    </form>
+            </div>
+        </div>
+            <div class="dropdown">
+                    <button class="dropbtn">mod5</button>
+                    <div class="dropdown-content">
+                        <a href="#">HTML</a>
+                        <a href="#">CSS</a>
+                        <a href="#">JS</a>
+                        <form id="pdfForm" enctype="multipart/form-data">
+
+                            <input type="text" id="pdfname" class="pdfname" required>
+                            <input type="file" id="pdfInput" accept=".pdf" required>
+                            <button type="submit">Upload</button>
+                        </form>
+            </div>
+            
+        </div>
+    </div>
+
+    <script src="js/mod.js"></script>
+    <script src="js/upload.js"></script>
+</body>
+</html>

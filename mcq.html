@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCQs Page</title>
+    <style>
+        
+        /* Styles for modal content */
+        .modal-content {
+            background-color: #CDF5FD;
+            margin: 10% auto;
+            padding: 15px;
+            border: 1px solid #888;
+            width: 60%;
+        }
+        .modal-content button[type="submit"] {
+    background-color: #CDF5FD;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+        /* Styles for form elements */
+        .modal-content label {
+            margin-bottom: 8px;
+            display: block;
+        }
+    
+        .modal-content input,
+        .modal-content select {
+            margin-bottom: 8px;
+            width: calc(100% - 20px);
+            padding: 8px;
+            box-sizing: border-box;
+        }
+    
+        .modal-content button[type="submit"] {
+            background-color: #89CFF3;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            float: right;
+        }
+    
+        .modal-content button[type="submit"]:hover {
+            background-color: #89CFF3;
+        }
+
+        /* Styles for modal */
+        .modal {
+            display: none; /* Hide modal by default */
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.4);
+            padding-top: 60px;
+        }
+        
+        /* Clearfix to clear floats */
+        .clearfix::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+        
+        /* Style for close button */
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+    
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .mcq-item {
+            background-color: #A0E9FF;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+
+        .mcq-item:hover {
+            background-color: #e0e0e0;
+        }
+        .pagination {
+    margin-top: 20px;
+}
+
+.pagination a {
+    display: inline-block;
+    padding: 5px 10px;
+    margin-right: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    text-decoration: none;
+    color: #333;
+}
+
+.pagination a:hover {
+    background-color: #f0f0f0;
+}
+
+.pagination .current-page {
+    background-color: #A0E9FF;
+    color: white;
+    font-weight: bold;
+}
+.title{
+
+    text-align: center;
+    font-size: 30px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: #FA7070;
+  }
+.navbar {
+    overflow:hidden;
+    background-color: #00A9FF;
+    position:absolute;
+    top: 40px;
+    width: 100%;
+    left: 0;
+    font-family: monospace;
+    font-size: 14px;
+    display: flex;
+    border-radius: 10px;
+    
+  }
+  .navbar a {
+    float: left;
+    display: block;
+    color: white;
+    text-align:center;
+    padding: 14px 85px;
+    text-decoration: none;
+    padding-right: 50px;
+    margin-right: 1231px;
+    padding-left: 50px;
+  }
+  .navbar-right {
+    display: flex;
+    align-items: center; /* Vertically center items */
+  }
+  #title{
+    margin-top: 5%;
+    margin-left: 46%;
+    
+  }
+  #title{
+    color:#FA7070;
+  }
+  #search{
+
+    margin-left: 1240px;
+    background-color: #A0E9FF;
+  }
+  body{
+    background-color: #CDF5FD;
+}
+ #createBtn{
+    background-color: #89CFF3;
+ } 
+    </style>
+</head>
+<body>
+    <div class="title">KNOTBOOK</div>
+    <div class="navbar">
+        
+        <div class="navbar-right">
+            <a href="/index1.1.html">HOME</a>
+            
+        </div>
+    </div>
+    <div class="container">
+        <h2 id="title"> <u>REVISION</u></h2>
+        <input type="text" id="search" placeholder="Search MCQs...">
+        <button id="createBtn">Create New MCQ</button>
+        <ul class="mcq-list" id="mcqList">
+            <!-- MCQs will be dynamically added here -->
+        </ul>
+        <div class="pagination" id="pagination">
+            <!-- Pagination controls will be dynamically added here -->
+        </div>
+    </div>
+
+    <!-- Modal for adding new MCQ -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span> <!-- Close button -->
+            <h2>Add New MCQ</h2>
+            <form id="addMCQForm">
+                <label for="mcqName">MCQ Name:</label>
+                <input type="text" id="mcqName" name="mcqName" required><br>
+                <label for="department">Department:</label>
+                <select id="department" name="department" required>
+                    <option value="">Select Department</option>
+                    <!-- Add options dynamically using JavaScript or populate from backend -->
+                    <option value="CSE">CSE</option>
+                    <option value="CE">CE</option>
+                    <option value="ME">ME</option>
+                    <option value="EEE">EEE</option>
+                    <option value="ECE">ECE</option>
+                    
+                    <!-- Add more options as needed -->
+                </select><br>
+                <label for="semNum">Semester Number:</label>
+                <select id="semNum" name="semNum" required>
+                    <option value="">Select Semester Number</option>
+                    <!-- Add options dynamically using JavaScript or populate from backend -->
+                    <option value="1">1st Semester</option>
+                    <option value="2">2nd Semester</option>
+                    <option value="3">3rd Semester</option>
+                    <option value="4">4th Semester</option>
+                    <option value="5">5th Semester</option>
+                    <option value="6">6th Semester</option>
+                    <option value="7">7th Semester</option>
+                    <option value="8">8th Semester</option>
+                    <!-- Add more options as needed -->
+                </select><br>
+                <label for="subject">Subject:</label>
+                <input type="text" id="subject" name="subject" required><br>
+                <label for="googleFormLink">Google Form Link:</label>
+                <input type="text" id="googleFormLink" name="googleFormLink" required><br>
+                <label for="completionDate">Tentative Date for Completion:</label>
+                <input type="date" id="completionDate" name="completionDate" required><br>
+                <button type="submit">Submit</button> <!-- Moved inside the form -->
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript code for showing and hiding the modal
+        var modal = document.getElementById('myModal');
+        var createBtn = document.getElementById('createBtn');
+        
+        const token = localStorage.getItem("jwt");
+        createBtn.onclick = function() {
+            modal.style.display = 'block';
+        }
+
+        // Function to close the modal
+        function closeModal() {
+            modal.style.display = 'none';
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+        // Call getMcqs() when the page loads
+        window.onload = function() {
+            getMcqs();
+        };
+
+        // Function to handle form submission in the modal
+        document.getElementById('addMCQForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            var mcqName = document.getElementById('mcqName').value;
+            var googleFormLink = document.getElementById('googleFormLink').value;
+            var tentativeDate = document.getElementById('completionDate').value;
+            var subject = document.getElementById('subject').value;
+            var department =  document.getElementById('department').value;
+            var semNum = document.getElementById('semNum').value;
+             
+            // Prepare data to send to the server
+            var data = {
+                mcqName: mcqName,
+                googleFormLink: googleFormLink,
+                tentativeDate: tentativeDate,
+                mcqBy: localStorage.getItem("username"),
+                subject :subject,
+                semNum:semNum,
+                department:department
+            };
+
+            // Send AJAX request to save the MCQ
+            fetch('http://localhost:8002/admin/saveMcq', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${token}`
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => {
+                if (response.ok) {
+                    // MCQ saved successfully
+                    setTimeout(() => {
+                Swal.fire({
+                    text: "MCQ saved successfully",
+                    icon: "success",
+                    confirmButtonText: "OK",
+                });
+            }, 500); // Adjust the delay as needed
+                    console.log('MCQ saved successfully');
+                    // Reset the form and close the modal
+                    document.getElementById('addMCQForm').reset();
+                    closeModal();
+                    getMcqs();
+                } else {
+                    // Error saving MCQ
+                    console.error('Error saving MCQ');
+                }
+            })
+            .catch(error => {
+                // Network error
+                console.error('Error:', error);
+            });
+        });
+// Function to handle pagination click events
+function handlePaginationClick(event, mcqs) {
+    event.preventDefault();
+    var clickedPage = parseInt(event.target.textContent);
+   // mcqs.reverse();
+    displayMcqs(mcqs, clickedPage);
+}
+
+// Function to display MCQs for a specific page
+// Function to display MCQs for a specific page
+function displayMcqs(mcqs, currentPage) {
+    var mcqList = document.getElementById('mcqList');
+    mcqList.innerHTML = ''; // Clear existing MCQ list
+
+    // Define the number of MCQs to display per page
+    var mcqsPerPage = 10;
+
+    // Calculate the total number of pages
+    var totalPages = Math.ceil(mcqs.length / mcqsPerPage);
+
+    // Calculate startIndex and endIndex based on currentPage
+    var startIndex = (currentPage - 1) * mcqsPerPage;
+    var endIndex = Math.min(startIndex + mcqsPerPage, mcqs.length);
+
+    // Loop through each MCQ and create clickable blocks to display them
+    mcqs.slice(startIndex, endIndex).forEach(mcq => {
+        var mcqItem = document.createElement('div');
+        mcqItem.classList.add('mcq-item');
+        var mcqLink = document.createElement('a');
+        mcqLink.textContent = mcq.mcqName;
+        mcqLink.href = mcq.googleFormLink; // Set href attribute to Google Form link
+        mcqLink.target = '_blank';
+        mcqLink.addEventListener('click', function() {
+            // Handle click event, you can navigate to a different page or perform other actions
+            console.log('Clicked on MCQ:', mcq.mcqName);
+        });
+
+        // Create element for creator's name
+        var creatorName = document.createElement('span');
+        creatorName.textContent = " : Created by: ";
+        creatorName.classList.add('creator');
+        var creatorText = document.createElement('span');
+        creatorText.textContent = mcq.mcqBy;
+        creatorText.classList.add('creator-text');
+        creatorName.appendChild(creatorText);
+
+        // Create element for completion date
+        var completionDate = document.createElement('span');
+        completionDate.textContent = " : Valid till: " + mcq.dateOfCompletion.split(" ")[0];
+        completionDate.classList.add('completion-date');
+
+        mcqItem.appendChild(mcqLink);
+        mcqItem.appendChild(creatorName);
+        mcqItem.appendChild(completionDate);
+        mcqList.appendChild(mcqItem);
+    });
+
+    // Add pagination controls
+    var pagination = document.getElementById('pagination');
+    pagination.innerHTML = '';
+
+    // Create pagination links
+    for (var i = 1; i <= totalPages; i++) {
+        var pageLink = document.createElement('a');
+        pageLink.textContent = i;
+        pageLink.href = '#';
+        pageLink.addEventListener('click', function(event) {
+            handlePaginationClick(event, mcqs); // Call separate function to handle pagination click
+        });
+        pagination.appendChild(pageLink);
+    }
+}
+
+
+
+// Call getMcqs() when the page loads
+window.onload = function() {
+    getMcqs();
+    // Add event listener to search input
+    document.getElementById('search').addEventListener('input', function() {
+        getMcqs(); // Call getMcqs whenever search input changes
+    });
+};
+
+// Function to fetch MCQs from the server
+function getMcqs() {
+    fetch('http://localhost:8002/adminuser/getMCQs', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`
+        }
+    })
+    .then(response => response.json()) // Parse response as JSON
+    .then(data => {
+        // Sort MCQs based on dateOfCompletion
+        data.sort((a, b) => {
+            // Convert date strings to Date objects for comparison
+            const dateA = new Date(a.dateOfCompletion);
+            const dateB = new Date(b.dateOfCompletion);
+            return dateA - dateB; // Sort in ascending order
+        });
+    
+        // Process the retrieved MCQs data
+        var searchInput = document.getElementById('search').value.toLowerCase().trim(); // Get the search input value
+        var filteredMcqs = data.filter(mcq => mcq.mcqName.toLowerCase().includes(searchInput)); // Filter MCQs based on search input
+        
+        displayMcqs(filteredMcqs, 1); // Display filtered MCQs for the first page initially
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+}
+
+    </script>
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+</html>
