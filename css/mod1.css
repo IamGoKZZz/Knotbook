@@ -1,0 +1,101 @@
+
+body {
+    /* Set the background to a gradient */
+    background-color: #FEFDED;
+  }
+  
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    padding: 40px;
+    margin-top: 150px;
+}
+
+.dropbtn {
+    background-color: #FA7070;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor:pointer;
+    border-radius: 10px;
+    padding-left: 90px;
+    padding-right: 90px;
+    
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    z-index: 1;
+    
+}
+
+.dropdown-content a {
+    color: rgb(254, 254, 254);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #C6EBC5;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    background-color: #A1C398;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #C69749;
+}
+.delete-icon {
+    width: 16px; /* Adjust the width of the delete icon */
+    height: 16px; /* Adjust the height of the delete icon */
+    margin-left: 5px; /* Adjust the margin as needed */
+    cursor: pointer; /* Show pointer cursor on hover */
+    display: inline; /* Set display to inline */
+
+}
+/* Style the popup container */
+.dropdown-container {
+    max-width: 700; /* Set the maximum width */
+  
+}
+
+/* Adjust other styles as needed */
+.plus-icon {
+    width: 16px; /* Adjust the width of the delete icon */
+    height: 16px; /* Adjust the height of the delete icon */
+    margin-left: 5px; /* Adjust the margin as needed */
+    cursor: pointer; /* Show pointer cursor on hover */
+    display: inline; /* Set display to inline */
+}
+
+.note-item {
+    display: flex;
+    align-items: center;
+}
+
+.note-item span {
+    flex: 1;
+}
+
+.download-icon,
+.delete-icon {
+    border: none;
+    background: none;
+    cursor: pointer;
+    margin-left: 5px; /* Adjust the margin as needed */
+}
+
+.download-icon img,
+.delete-icon img {
+    width: 16px; /* Adjust the icon size as needed */
+    height: 16px; /* Adjust the icon size as needed */
+}

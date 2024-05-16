@@ -1,0 +1,221 @@
+  body {
+  background-color: #CDF5FD;
+  }
+
+  .title{
+
+    text-align: center;
+    font-size: 30px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: #FA7070;
+  }
+
+
+  .navbar {
+    overflow:hidden;
+    background-color: #00A9FF;
+    top: 40px;
+    width: 100%;
+    left: 0;
+    font-family: monospace;
+    font-size: 14px;
+    display: flex;
+    border-radius: 10px;
+  }
+  
+
+  
+  .navbar a {
+    float: left;
+  
+    color: white;
+    text-align:center;
+    padding: 14px 85px;
+    text-decoration: none;
+    font-size: 17px;
+    font-family: monospace;
+    
+  }
+
+
+  .dropp .button1 {
+    
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 25px 85px;
+    text-decoration: none;
+    background-color: #00A9FF;
+    border: none;
+    font-family: monospace;
+    font-size: 17px;
+    padding-top: 13px;
+    margin-top: 1px;
+  }
+  .dropp:hover, .button1:hover {
+    background-color: #C6EBC5;
+    color: rgb(251, 251, 251);
+    
+    
+  }
+  
+    .dropp {
+      float: left;
+      overflow: hidden;
+  
+    }
+  
+    .dropdown-menu {
+        display:none;
+        position: absolute;
+        background-color: #89CFF3;
+        min-width: 50px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+        font-family: "Euclid Circular A";
+        margin-top: 0px;
+      }
+      .dropdown-menu button {
+        float: none;
+        color: rgb(255, 255, 255);
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+        width: 100%;
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+        
+      }
+      .dropdown-menu button:hover {
+        background-color: #A0E9FF;
+        color: #FA7070;
+        
+      }
+      .button1:hover{
+        color: #FA7070;
+        background-color: #89CFF3;
+      }
+      .dropp:hover .dropdown-menu {
+        display: block;
+        
+      } 
+    
+
+  /* CSS for dropdown buttons */
+  .drop{
+    overflow: hidden;
+    display: flex;
+    margin-top:250px ;
+    margin-left: 100px;
+    
+  }
+
+  .dropdown {
+      float: left;
+      overflow: hidden;
+      display: block;
+      text-align: center;
+      font-family: sans-serif;
+      border: #a01414;
+      border: 10px;
+    
+    }
+
+
+  .dropdown .dropbtn {
+    font-size: 16px;
+    
+    outline: 100px;
+    color: rgb(255, 255, 255);
+    padding: 14px 100px;
+    background-color: #00A9FF;
+    font-family: "Euclid Circular A";
+    margin: 0;
+    border-radius: 8px;
+    
+    font-size: 19px;
+  }
+  .dropdown{
+
+    padding-left: 10px;
+    
+  }
+
+  .navbar a:hover, .dropdown:hover .dropbtn {
+    background-color: #89CFF3;
+    color: #FA7070;
+    
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #89CFF3;
+    min-width: 250px;
+    box-shadow: 0px 8px 16px 0px rgba(255, 255, 255, 0.2);
+    z-index: 1;
+    font-family: "Euclid Circular A";
+    border-radius: 5px;
+  }
+
+  .dropdown-content button {
+    float: none;
+    color: #ffffff;
+    padding: 10px 16px;
+    padding-top: 0px;
+    padding-bottom: 10px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    width: 100%;
+    border: none;
+    background-color: #89CFF3;
+    cursor: pointer;
+    height: 22px;
+  }
+
+  .dropdown-content button:hover {
+    background-color: #A0E9FF;
+    color: #FA7070;
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  .popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #00A9FF;
+    padding: 20px;
+    padding-left: 100px;
+    padding-right: 100px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 9999;
+  }
+
+  .popup-content {
+    max-width: 400px;
+    
+  }
+
+  .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+  }
+
+  #user-list {
+    margin-top: 5px;
+  }
+
+  button {
+    margin-top: 10px;
+  }
