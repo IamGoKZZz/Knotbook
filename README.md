@@ -51,18 +51,3 @@ Contribution are always welcome and recommended! Here is how:
 
   **Updated**
   * Bootstrap 4 Version
-
-### Aug 29, 2017
-  - **Initial release**
-
-# Looking For a Free Admin Template?
-Stisla is waiting for you. [Download now](https://stisla.multinity.com).
-
-[![Stisla Preview](https://getstisla.com/landing/stisla-share.png)](https://getstisla.com)
-
-
-# Buy me a Coffee
-Support me :) http://buymeacoff.ee/mhdnauvalazhar
-
-# License
-[MIT License](http://opensource.org/licenses/MIT)
